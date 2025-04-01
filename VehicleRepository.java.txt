@@ -1,0 +1,9 @@
+
+📍 Path: backend/src/main/java/com/example/vehiclemonitor/repositories/VehicleRepository.java
+package com.example.vehiclemonitor.repositories;
+
+import com.example.vehiclemonitor.models.Vehicle;
+import org.springframework.data.jpa.repository.JpaRepository;
+
+public interface VehicleRepository extends JpaRepository<Vehicle, Long> {
+}
