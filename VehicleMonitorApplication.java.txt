@@ -1,0 +1,13 @@
+
+📍 Path: backend/src/main/java/com/example/vehiclemonitor/VehicleMonitorApplication.java
+package com.example.vehiclemonitor;
+
+import org.springframework.boot.SpringApplication;
+import org.springframework.boot.autoconfigure.SpringBootApplication;
+
+@SpringBootApplication
+public class VehicleMonitorApplication {
+    public static void main(String[] args) {
+        SpringApplication.run(VehicleMonitorApplication.class, args);
+    }
+}
