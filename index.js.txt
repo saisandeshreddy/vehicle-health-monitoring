@@ -1,0 +1,26 @@
+
+📍 Path: frontend/pages/index.js
+import { useEffect, useState } from "react";
+
+export default function Home() {
+  const [vehicles, setVehicles] = useState([]);
+
+  useEffect(() => {
+    fetch("http://localhost:8080/vehicles")
+      .then((res) => res.json())
+      .then((data) => setVehicles(data));
+  }, []);
+
+  return (
+    <div>
+      <h1>Vehicle Health Monitor</h1>
+      <ul>
+        {vehicles.map((vehicle) => (
+          <li key={vehicle.id}>
+            {vehicle.model} ({vehicle.vrn}) - {vehicle.healthStatus}
+          </li>
+        ))}
+      </ul>
+    </div>
+  );
+}
