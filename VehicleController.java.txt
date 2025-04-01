@@ -1,0 +1,28 @@
+
+📍 Path: backend/src/main/java/com/example/vehiclemonitor/controllers/VehicleController.java
+package com.example.vehiclemonitor.controllers;
+
+import com.example.vehiclemonitor.models.Vehicle;
+import com.example.vehiclemonitor.repositories.VehicleRepository;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.web.bind.annotation.*;
+
+import java.util.List;
+
+@RestController
+@RequestMapping("/vehicles")
+public class VehicleController {
+
+    @Autowired
+    private VehicleRepository vehicleRepository;
+
+    @GetMapping
+    public List<Vehicle> getVehicles() {
+        return vehicleRepository.findAll();
+    }
+
+    @PostMapping
+    public Vehicle addVehicle(@RequestBody Vehicle vehicle) {
+        return vehicleRepository.save(vehicle);
+    }
+}
